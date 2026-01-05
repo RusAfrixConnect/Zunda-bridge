@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zunda Bridge Prototype - Achetez Global, Payez en ZND</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- En-tête -->
+        <header>
+            <div class="logo">
+                <h1><i class="fas fa-bridge"></i> Zunda Bridge</h1>
+                <p class="tagline">Achetez sur toutes les marketplaces, payez avec <strong>ZND</strong></p>
+            </div>
+            <div class="wallet-section">
+                <div class="znd-balance">
+                    <span>Solde ZND:</span>
+                    <strong id="zndBalance">1,250.50</strong>
+                </div>
+                <button class="btn-connect"><i class="fas fa-wallet"></i> Connecter Wallet</button>
+            </div>
+        </header>
+
+        <!-- Navigation des marketplaces -->
+        <nav class="marketplace-nav">
+            <button class="marketplace-btn active" data-source="1688">
+                <i class="fas fa-industry"></i> 1688.com
+            </button>
+            <button class="marketplace-btn" data-source="wildberries">
+                <i class="fas fa-shopping-bag"></i> Wildberries
+            </button>
+            <button class="marketplace-btn" data-source="ozon">
+                <i class="fas fa-box"></i> Ozon
+            </button>
+            <button class="marketplace-btn" data-source="amazon">
+                <i class="fas fa-a"></i> Amazon
+            </button>
+        </nav>
+
+        <!-- Barre de recherche et filtre -->
+        <div class="search-section">
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Rechercher des produits...">
+                <button id="searchBtn"><i class="fas fa-search"></i></button>
+            </div>
+            <select id="categoryFilter">
+                <option value="">Toutes catégories</option>
+                <option value="electronics">Électronique</option>
+                <option value="fashion">Mode</option>
+                <option value="home">Maison</option>
+                <option value="sports">Sports</option>
+            </select>
+        </div>
+
+        <!-- Zone des produits -->
+        <main>
+            <h2 id="marketplaceTitle">Produits 1688.com</h2>
+            <div class="products-grid" id="productsGrid">
+                <!-- Les produits seront chargés ici par JavaScript -->
+            </div>
+            <div class="pagination" id="pagination">
+                <!-- La pagination sera générée ici -->
+            </div>
+        </main>
+
+        <!-- Calculateur ZND (fixe sur le côté) -->
+        <aside class="calculator">
+            <h3><i class="fas fa-calculator"></i> Calculateur ZND</h3>
+            <div class="calc-input">
+                <input type="number" id="convertAmount" placeholder="Montant" min="0" step="0.01">
+                <select id="convertCurrency">
+                    <option value="USD">USD ($)</option>
+                    <option value="EUR">EUR (€)</option>
+                    <option value="RUB">RUB (₽)</option>
+                    <option value="CNY">CNY (¥)</option>
+                </select>
+            </div>
+            <button id="convertBtn" class="btn-convert">Convertir en ZND</button>
+            
+            <div class="calc-results" id="calcResults">
+                <div class="result-line">
+                    <span>Montant original:</span>
+                    <span id="originalAmount">-</span>
+                </div>
+                <div class="result-line">
+                    <span>Équivalent ZND:</span>
+                    <strong id="zndAmount">-</strong>
+                </div>
+                <div class="result-line fee">
+                    <span>Frais de service (0.5%):</span>
+                    <span id="feeAmount">- ZND</span>
+                </div>
+                <div class="result-line total">
+                    <span>Total à payer:</span>
+                    <strong id="totalAmount">- ZND</strong>
+                </div>
+            </div>
+            
+            <div class="cta">
+                <button class="btn-buy"><i class="fas fa-shopping-cart"></i> Procéder à l'achat (Démo)</button>
+                <p class="note">Ceci est un prototype. L'achat réel sera disponible bientôt.</p>
+            </div>
+        </aside>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
