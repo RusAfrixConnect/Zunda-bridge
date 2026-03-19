@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="contact_title">Zunda-Bridge – Contact</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+</head>
+<body>
+    <!-- Barre d'annonce -->
+    <div class="announcement-bar">
+        <div class="container">
+            <p data-i18n="announcement_text">🚀 ZND Private Sale bientôt disponible – Rejoignez la whitelist pour des bonus exclusifs !</p>
+            <a href="index.html#whitelist" class="btn-announcement" data-i18n="announcement_btn">Je m'inscris →</a>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>ZUNDA<span>-BRIDGE</span></h1>
+                    <p class="tagline" data-i18n="tagline">Le pont commercial Russie-Afrique</p>
+                </div>
+                
+                <nav class="nav-menu">
+                    <ul>
+                        <li><a href="index.html" data-i18n="nav_home">Accueil</a></li>
+                        <li><a href="shop.html" data-i18n="nav_shop">Boutique</a></li>
+                        <li><a href="africa-solutions.html" data-i18n="nav_africa">Solutions Afrique</a></li>
+                        <li><a href="russia-solutions.html" data-i18n="nav_russia">Solutions Russie</a></li>
+                        <li><a href="about.html" data-i18n="nav_about">À propos</a></li>
+                        <li><a href="contact.html" class="active" data-i18n="nav_contact">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-actions">
+                    <div class="znd-price">
+                        <span class="label" data-i18n="znd_price_label">Prix ZND</span>
+                        <span class="value">$0.15 <span class="change">+5.2%</span></span>
+                    </div>
+                    <a href="index.html#whitelist" class="btn-primary" data-i18n="whitelist_btn">Rejoindre la Whitelist</a>
+                    
+                    <!-- Sélecteur de langue amélioré -->
+                    <div class="language-selector">
+                        <button class="lang-btn" data-lang="fr">
+                            <span class="flag">🇫🇷</span>
+                            <span class="lang-name">FR</span>
+                        </button>
+                        <button class="lang-btn" data-lang="en">
+                            <span class="flag">🇬🇧</span>
+                            <span class="lang-name">EN</span>
+                        </button>
+                        <button class="lang-btn" data-lang="ru">
+                            <span class="flag">🇷🇺</span>
+                            <span class="lang-name">RU</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <div class="container">
+            <h1 class="page-title" data-i18n="contact_title">Contactez-nous</h1>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2 data-i18n="contact_info">Informations de contact</h2>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3 data-i18n="contact_email">Email</h3>
+                            <p>contact@zunda-bridge.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3 data-i18n="contact_phone">Téléphone</h3>
+                            <p>+7 (999) 123-45-67 (Moscou)</p>
+                            <p>+221 77 123 45 67 (Dakar)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3 data-i18n="contact_address">Adresse</h3>
+                            <p>Moscou, Russie</p>
+                            <p>Dakar, Sénégal</p>
+                            <p>Pékin, Chine</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <h2 data-i18n="contact_form_title">Envoyez-nous un message</h2>
+                    
+                    <form class="contact-form" id="contact-form">
+                        <input type="text" placeholder="Votre nom" data-i18n="contact_form_name" required>
+                        <input type="email" placeholder="Votre email" data-i18n="contact_form_email" required>
+                        <input type="text" placeholder="Sujet" data-i18n="contact_form_subject" required>
+                        <textarea rows="5" placeholder="Votre message" data-i18n="contact_form_message" required></textarea>
+                        <button type="submit" class="btn-primary" data-i18n="contact_form_submit">Envoyer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (identique) -->
+    <footer class="footer">
+        <!-- ... même contenu que index.html ... -->
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
