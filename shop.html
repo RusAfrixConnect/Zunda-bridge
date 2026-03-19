@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="shop_page_title">Zunda-Bridge – Boutique internationale</title>
+    <meta name="description" content="Achetez sur Wildberries, 1688 et Amazon avec ZND, la crypto qui protège votre épargne.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+</head>
+<body>
+    <!-- Barre d'annonce -->
+    <div class="announcement-bar">
+        <div class="container">
+            <p data-i18n="announcement_text">🚀 ZND Private Sale bientôt disponible – Rejoignez la whitelist pour des bonus exclusifs !</p>
+            <a href="index.html#whitelist" class="btn-announcement" data-i18n="announcement_btn">Je m'inscris →</a>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>ZUNDA<span>-BRIDGE</span></h1>
+                    <p class="tagline" data-i18n="tagline">Le pont commercial Russie-Afrique</p>
+                </div>
+                
+                <nav class="nav-menu">
+                    <ul>
+                        <li><a href="index.html" data-i18n="nav_home">Accueil</a></li>
+                        <li><a href="shop.html" class="active" data-i18n="nav_shop">Boutique</a></li>
+                        <li><a href="africa-solutions.html" data-i18n="nav_africa">Solutions Afrique</a></li>
+                        <li><a href="russia-solutions.html" data-i18n="nav_russia">Solutions Russie</a></li>
+                        <li><a href="about.html" data-i18n="nav_about">À propos</a></li>
+                        <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-actions">
+                    <div class="znd-price">
+                        <span class="label" data-i18n="znd_price_label">Prix ZND</span>
+                        <span class="value">$0.15 <span class="change">+5.2%</span></span>
+                    </div>
+                    <a href="index.html#whitelist" class="btn-primary" data-i18n="whitelist_btn">Rejoindre la Whitelist</a>
+                    
+                    <!-- Sélecteur de langue amélioré -->
+                    <div class="language-selector">
+                        <button class="lang-btn" data-lang="fr">
+                            <span class="flag">🇫🇷</span>
+                            <span class="lang-name">FR</span>
+                        </button>
+                        <button class="lang-btn" data-lang="en">
+                            <span class="flag">🇬🇧</span>
+                            <span class="lang-name">EN</span>
+                        </button>
+                        <button class="lang-btn" data-lang="ru">
+                            <span class="flag">🇷🇺</span>
+                            <span class="lang-name">RU</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="shop-page">
+        <div class="container">
+            <h1 class="page-title" data-i18n="shop_page_title">Notre boutique internationale</h1>
+            
+            <!-- Filtres -->
+            <div class="shop-filters">
+                <select class="filter-select" id="marketplace-filter">
+                    <option value="all" data-i18n="filter_all">Tous les marchés</option>
+                    <option value="wildberries" data-i18n="filter_wildberries">Wildberries</option>
+                    <option value="1688" data-i18n="filter_1688">1688.com</option>
+                    <option value="amazon" data-i18n="filter_amazon">Amazon</option>
+                </select>
+                
+                <select class="filter-select" id="category-filter">
+                    <option value="all" data-i18n="category_all">Toutes catégories</option>
+                    <option value="electronics" data-i18n="category_electronics">Électronique</option>
+                    <option value="fashion" data-i18n="category_fashion">Mode</option>
+                    <option value="home" data-i18n="category_home">Maison</option>
+                </select>
+                
+                <select class="filter-select" id="sort-filter">
+                    <option value="popular" data-i18n="sort_popular">Les plus populaires</option>
+                    <option value="price_asc" data-i18n="sort_price_asc">Prix croissant</option>
+                    <option value="price_desc" data-i18n="sort_price_desc">Prix décroissant</option>
+                </select>
+            </div>
+
+            <!-- Grille de produits -->
+            <div class="products-grid" id="shop-products-grid">
+                <!-- Produits chargés dynamiquement -->
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="page-btn active">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">3</button>
+                <button class="page-btn">4</button>
+                <button class="page-btn">5</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <h3>ZUNDA<span>-BRIDGE</span></h3>
+                    </div>
+                    <p data-i18n="footer_desc">Le pont commercial Russie-Afrique-Chine, propulsé par la crypto ZND.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4 data-i18n="footer_quick_links">Liens rapides</h4>
+                    <ul>
+                        <li><a href="index.html" data-i18n="nav_home">Accueil</a></li>
+                        <li><a href="shop.html" data-i18n="nav_shop">Boutique</a></li>
+                        <li><a href="about.html" data-i18n="nav_about">À propos</a></li>
+                        <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 data-i18n="footer_solutions">Solutions</h4>
+                    <ul>
+                        <li><a href="russia-solutions.html" data-i18n="nav_russia">Solutions Russie</a></li>
+                        <li><a href="africa-solutions.html" data-i18n="nav_africa">Solutions Afrique</a></li>
+                        <li><a href="#" data-i18n="china_title">Pour la Chine</a></li>
+                        <li><a href="#" data-i18n="footer_business">Pour les entreprises</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 data-i18n="footer_legal">Légal</h4>
+                    <ul>
+                        <li><a href="#" data-i18n="footer_terms">Conditions d'utilisation</a></li>
+                        <li><a href="#" data-i18n="footer_privacy">Politique de confidentialité</a></li>
+                        <li><a href="#" data-i18n="footer_legal_notice">Mentions légales</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 data-i18n="footer_contact">Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> contact@zunda-bridge.com</li>
+                        <li><i class="fas fa-phone"></i> +7 (XXX) XXX-XX-XX</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Moscou / Dakar / Pékin</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p data-i18n="footer_copyright">© 2026 Zunda-Bridge. Tous droits réservés. ZND est une crypto adossée à des mineraux réels.</p>
+                <div class="footer-logos">
+                    <img src="assets/images/bsc-logo.png" alt="BNB Chain">
+                    <img src="assets/images/chainlink-logo.png" alt="Chainlink">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
