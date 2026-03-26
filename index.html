@@ -15,8 +15,8 @@
     <!-- Barre d'annonce -->
     <div class="announcement-bar">
         <div class="container">
-            <p data-i18n="announcement_text">🚀 ZND Private Sale bientôt disponible – Rejoignez la whitelist pour des bonus exclusifs !</p>
-            <a href="#whitelist" class="btn-announcement" data-i18n="announcement_btn">Je m'inscris →</a>
+            <p data-i18n="announcement_text">🚀 ZND est maintenant en ligne sur BSC Mainnet – Achetez sur PancakeSwap !</p>
+            <a href="https://pancakeswap.finance/swap?outputCurrency=0x3BcE58FC2C2BB0653dC757Ba0bc5328d4f2f15A9" target="_blank" class="btn-announcement" style="background: white; color: #1E40AF; padding: 8px 20px; border-radius: 50px;">Acheter ZND →</a>
         </div>
     </div>
 
@@ -43,9 +43,10 @@
                 <div class="header-actions">
                     <div class="znd-price">
                         <span class="label" data-i18n="znd_price_label">Prix ZND</span>
-                        <span class="value">$0.15 <span class="change">+5.2%</span></span>
+                        <span class="value" id="znd-price-display">$0.0035 <span class="change">+5.2%</span></span>
                     </div>
-                    <a href="#whitelist" class="btn-primary" data-i18n="whitelist_btn">Rejoindre la Whitelist</a>
+                    <a href="https://pancakeswap.finance/swap?outputCurrency=0x3BcE58FC2C2BB0653dC757Ba0bc5328d4f2f15A9" target="_blank" class="btn-primary" style="background: linear-gradient(45deg, #1E40AF, #8b5cf6);">Acheter ZND</a>
+                    <button onclick="addZNDToMetaMask()" class="btn-secondary" style="cursor: pointer;">➕ Ajouter ZND</button>
                     
                     <!-- Sélecteur de langue amélioré -->
                     <div class="language-selector">
@@ -97,7 +98,7 @@
                     </div>
 
                     <div class="trust-badges">
-                        <img src="assets/images/bscscan-logo.png" alt="BscScan">
+                        <a href="https://bscscan.com/token/0x3BcE58FC2C2BB0653dC757Ba0bc5328d4f2f15A9" target="_blank"><img src="assets/images/bscscan-logo.png" alt="BscScan"></a>
                         <img src="assets/images/coinmarketcap-logo.png" alt="CoinMarketCap">
                         <img src="assets/images/coingecko-logo.png" alt="CoinGecko">
                     </div>
@@ -237,7 +238,7 @@
                         <i class="fas fa-wallet"></i>
                     </div>
                     <h3 data-i18n="step1_title">Obtenez des ZND</h3>
-                    <p data-i18n="step1_desc">Achetez ZND sur notre plateforme ou sur les exchanges partenaires.</p>
+                    <p data-i18n="step1_desc">Achetez ZND sur <a href="https://pancakeswap.finance/swap?outputCurrency=0x3BcE58FC2C2BB0653dC757Ba0bc5328d4f2f15A9" target="_blank">PancakeSwap</a> ou via notre private sale.</p>
                 </div>
 
                 <div class="step-card">
@@ -268,7 +269,7 @@
                 <div class="africa-content">
                     <span class="section-badge" data-i18n="africa_section_badge">🇲🇱 SOLUTION POUR L'AFRIQUE</span>
                     <h2 data-i18n="africa_section_title">ZND protège votre épargne contre l'inflation</h2>
-                    <p data-i18n="africa_section_desc">En Afrique, les monnaies locales perdent 20-30% de leur valeur chaque année. Le Naira nigérian, le Cedi ghanéen, le Shilling kenyan – tous s'effondrent.</p>
+                    <p data-i18n="africa_section_desc">En Afrique, les monnaies locales perdent 20-30% de leur valeur chaque année. Le Naira nigérian, le Cedi ghanéen, le Shilling kenyan – tous s'effondrent. ZND est votre bouclier.</p>
                     
                     <div class="africa-stats">
                         <div class="stat-row">
@@ -359,7 +360,7 @@
             <div class="whitelist-box">
                 <span class="whitelist-badge" data-i18n="whitelist_badge">🔒 PRIVATE SALE</span>
                 <h2 data-i18n="whitelist_title">Rejoignez la whitelist ZND</h2>
-                <p data-i18n="whitelist_desc">Soyez parmi les premiers à acheter ZND au prix le plus bas – bonus jusqu'à 20% pour les 100 premiers inscrits.</p>
+                <p data-i18n="whitelist_desc">Soyez parmi les premiers à acheter ZND au prix le plus bas – bonus jusqu'à 20% pour les 100 premiers inscrits. <strong>Prix actuel sur PancakeSwap: $0.0035</strong></p>
 
                 <div class="countdown">
                     <div class="countdown-item">
@@ -455,7 +456,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p data-i18n="footer_copyright">© 2026 Zunda-Bridge. Tous droits réservés. ZND est une crypto adossée à des mineraux réels.</p>
+                <p data-i18n="footer_copyright">© 2026 Zunda-Bridge. Tous droits réservés. ZND est une crypto adossée à des mineraux réels. <a href="https://bscscan.com/token/0x3BcE58FC2C2BB0653dC757Ba0bc5328d4f2f15A9" target="_blank" style="color: #10b981;">Voir sur BscScan</a></p>
                 <div class="footer-logos">
                     <img src="assets/images/bsc-logo.png" alt="BNB Chain">
                     <img src="assets/images/chainlink-logo.png" alt="Chainlink">
@@ -466,5 +467,54 @@
 
     <script src="translations.js"></script>
     <script src="script.js"></script>
+    <script>
+    // Adresse ZND sur le mainnet
+    const ZND_ADDRESS = '0x3BcE58FC2C2BB0653dC757Ba0bc5328d4f2f15A9';
+    
+    // Fonction pour ajouter ZND à MetaMask
+    async function addZNDToMetaMask() {
+        if (window.ethereum) {
+            try {
+                await window.ethereum.request({
+                    method: 'wallet_watchAsset',
+                    params: {
+                        type: 'ERC20',
+                        options: {
+                            address: ZND_ADDRESS,
+                            symbol: 'ZND',
+                            decimals: 18,
+                            image: 'https://zunda-bridge.com/assets/images/znd-logo.png'
+                        }
+                    }
+                });
+                alert('ZND a été ajouté à MetaMask !');
+            } catch (error) {
+                console.log("Erreur", error);
+                alert("Erreur lors de l'ajout de ZND");
+            }
+        } else {
+            alert("MetaMask n'est pas installé. Installez-le pour ajouter ZND.");
+        }
+    }
+    
+    // Mettre à jour le prix ZND en temps réel (optionnel)
+    async function fetchZNDPrice() {
+        try {
+            // Appel à une API de prix (à configurer plus tard)
+            // Pour l'instant, on garde le prix fixe
+            const priceElement = document.getElementById('znd-price-display');
+            if (priceElement) {
+                priceElement.innerHTML = '$0.0035 <span class="change">+5.2%</span>';
+            }
+        } catch (error) {
+            console.log("Erreur chargement prix");
+        }
+    }
+    
+    // Exécuter au chargement
+    document.addEventListener('DOMContentLoaded', function() {
+        fetchZNDPrice();
+    });
+    </script>
 </body>
 </html>
